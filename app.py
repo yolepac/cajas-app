@@ -60,7 +60,7 @@ def pdf_first_page_to_pil(pdf_bytes, zoom=2.0):
     return img
 
 def ocr_names_from_image(img_rgb):
-    \"\"\"
+    """
     Devuelve lista de nombres leídos de la columna izquierda.
     Intenta: 1) pytesseract, 2) easyocr (si está instalado).
     \"\"\"
