@@ -50,9 +50,10 @@ def build_time_slots(start, end, step):
 
 slots = build_time_slots(start_time, end_time, slot_mins)
 
-def pdf_first_page_to_pil(pdf_bytes, zoom=2.0):
+def pdf_page_to_pil(pdf_bytes, page_index=0, zoom=2.0):
     doc = fitz.open(stream=pdf_bytes, filetype="pdf")
-    page = doc[0]
+    page_index = max(0, min(page_index, doc.page_count - 1))
+    page = doc[page_index]
     mat = fitz.Matrix(zoom, zoom)
     pix = page.get_pixmap(matrix=mat, alpha=False)
     img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
