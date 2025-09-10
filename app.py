@@ -63,7 +63,7 @@ def ocr_names_from_image(img_rgb):
     """
     Devuelve lista de nombres leídos de la columna izquierda.
     Intenta: 1) pytesseract, 2) easyocr (si está instalado).
-    \"\"\"
+    """
     names = []
 
     # Preprocesado suave para OCR
